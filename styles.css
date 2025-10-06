@@ -1,0 +1,132 @@
+:root{
+  --bg: #ffffff;
+  --fg: #111;
+  --muted: #666;
+  --accent: #0b5fff;
+  --card: #f6f7fb;
+  font-family: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:36px 20px;
+}
+
+.container{
+  width:min(760px,100%);
+}
+
+header h1{
+  margin:0 0 6px 0;
+  font-weight:700;
+  letter-spacing:-0.01em;
+}
+
+.muted{color:var(--muted)}
+.small{font-size:13px}
+
+.controls{
+  margin-top:18px;
+  background:var(--card);
+  padding:14px;
+  border-radius:10px;
+  display:grid;
+  gap:10px;
+}
+
+.controls label{
+  display:block;
+  font-size:14px;
+  color:var(--fg);
+}
+
+.controls input{
+  margin-top:8px;
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid #e3e6ee;
+  background:white;
+  font-size:15px;
+}
+
+.row{
+  display:flex;
+  gap:10px;
+  margin-top:6px;
+}
+
+button{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:10px 14px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  transition:transform .12s ease, opacity .12s;
+}
+
+button.secondary{
+  background:#e6e9f7;
+  color:var(--fg);
+}
+
+button:active{transform:translateY(1px)}
+button:disabled{opacity:.6; cursor:not-allowed}
+
+/* Output */
+.output{
+  margin-top:18px;
+}
+
+.story{
+  margin-top:8px;
+  padding:18px;
+  border-radius:10px;
+  background:white;
+  min-height:120px;
+  border:1px solid #eef0f6;
+  white-space:pre-wrap;
+  line-height:1.5;
+}
+
+/* Modal */
+.modal{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(15,20,30,0.35);
+  padding:20px;
+}
+
+.hidden{display:none}
+
+.modal-card{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  width:100%;
+  max-width:420px;
+  box-shadow:0 8px 30px rgba(17,24,39,0.12);
+}
+
+.modal-card input{
+  width:100%;
+  margin-top:10px;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid #e3e6ee;
+}
+

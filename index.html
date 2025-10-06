@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bedtime Story Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- import map for potential future libs -->
+  <script type="importmap">
+  {
+    "imports": {
+      "nanoid": "https://cdn.jsdelivr.net/npm/nanoid/nanoid.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Bedtime Story — Unicorn</h1>
+      <p class="muted">Generates a short bedtime story using OpenAI Responses API (gpt-5).</p>
+    </header>
+
+    <section class="controls">
+      <label>
+        Story seed (optional)
+        <input id="seed" placeholder="A little unicorn who loved starlight" />
+      </label>
+
+      <div class="row">
+        <button id="generate">Generate Story</button>
+        <button id="clear">Clear</button>
+      </div>
+
+      <p class="muted small">API key is required. You'll be prompted to enter it once per session; it won't be stored.</p>
+    </section>
+
+    <section class="output">
+      <h2>Story</h2>
+      <div id="story" class="story">No story yet — click "Generate Story".</div>
+    </section>
+
+    <footer>
+      <small class="muted">Uses OpenAI Responses API. Never share your API key publicly.</small>
+    </footer>
+  </main>
+
+  <!-- API Key prompt modal -->
+  <div id="keyModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <h3 id="modalTitle">Enter OpenAI API Key</h3>
+      <p class="muted">Paste your OpenAI API key (starts with "sk-"). It's used only in this tab's memory.</p>
+      <input id="apiKeyInput" type="password" placeholder="sk-..." autocomplete="off" />
+      <div class="row">
+        <button id="saveKey">Save for session</button>
+        <button id="cancelKey" class="secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
